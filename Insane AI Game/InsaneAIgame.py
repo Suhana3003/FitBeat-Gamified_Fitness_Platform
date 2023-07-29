@@ -122,8 +122,15 @@ def videosetup():
     points = 0
 
 
-    coinImg = cv2.imread("COIN.png")
-    coinImg = cv2.resize(coinImg, (50,50), interpolation = cv2.INTER_AREA)
+    # coinImg = cv2.imread("COIN.png")
+    # coinImg = cv2.resize(coinImg, (50,50), interpolation = cv2.INTER_AREA)
+    # coinImg = cv2.resize(coinImg,(50,50),fx=0,fy=0, interpolation = cv2.INTER_AREA)
+    import cv2
+    img = cv2.imread("COIN.png")
+    if img is None:
+        print("Image not loaded. Check the file path.")
+    else:
+        print("Image loaded successfully. Shape:", img.shape)
 
     time0 = time()
     # Iterate until the video is accessed successfully.
